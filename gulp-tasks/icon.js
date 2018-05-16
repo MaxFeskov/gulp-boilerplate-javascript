@@ -1,5 +1,6 @@
-const { $ } = global;
-const { taskPath: path } = global;
+const {
+  $, taskPath: path,
+} = global;
 
 const gulp = require('gulp');
 const del = require('del');
@@ -19,20 +20,14 @@ gulp.task('build:icon', () =>
       fontHeight: 1001,
     }))
     .on('glyphs', (glyphs) => {
-      const icons = [];
       const hexSystem = 16;
-
-      for (let i = 0; i < glyphs.length; i += 1) {
-        const glyph = glyphs[i];
-        const item = {
-          name: glyph.name,
-          icon: glyph.unicode[0].charCodeAt(0).toString(hexSystem),
-        };
-        icons.push(item);
-      }
+      const icons = glyphs.map(item => ({
+        name: item.name,
+        icon: item.unicode[0].charCodeAt(0).toString(hexSystem),
+      }));
 
       gulp
-        .src('./gulp-tasks/_icons.mustache')
+        .src(path.src.iconFontTemplate)
         .pipe($.mustache({
           icons,
           'font-name': path.build.iconFontName,

@@ -1,5 +1,6 @@
-const { $ } = global;
-const { taskPath: path } = global;
+const {
+  $, taskPath: path,
+} = global;
 
 const gulp = require('gulp');
 const del = require('del');
@@ -27,6 +28,7 @@ gulp.task('build:script', () =>
         .on('error', global.errorHandler)
         .pipe(source(fileNameForSave))
         .pipe(buffer())
+        .pipe($.uglify())
         .pipe(gulp.dest(path.build.script));
     })));
 

@@ -7,8 +7,13 @@ module.exports = {
     browser: true,
     node: true,
   },
-  extends: ['airbnb-base', 'plugin:import/errors', 'plugin:import/warnings'],
-  plugins: ['prettier', 'import'],
+  extends: [
+    'airbnb-base',
+    'plugin:security/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+  ],
+  plugins: ['prettier', 'security', 'import'],
   rules: {
     'linebreak-style': [2, 'windows'],
     'import/no-unresolved': 0,

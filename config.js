@@ -1,10 +1,12 @@
 const srcPath = {
   locale: 'ru',
   lineending: '\r\n',
+  compassHelperTemplate: './gulp-tasks/scss-imagehelper.mustache',
   data: './src/data/',
   font: './src/fonts/**/*.*',
   html: ['src/pug/*.pug', '!src/pug/_*.pug'],
   icon: './src/icons/*.svg',
+  iconFontTemplate: './gulp-tasks/_icons.mustache',
   image: ['./src/img/**/*.*', '!src/img/images/**/*.*'],
   script: './src/js/*.js',
   style: './src/scss/*.scss',

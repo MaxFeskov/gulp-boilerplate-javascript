@@ -1,5 +1,6 @@
-const { $ } = global;
-const { taskPath: path } = global;
+const {
+  $, taskPath: path,
+} = global;
 
 const gulp = require('gulp');
 const del = require('del');
@@ -17,7 +18,7 @@ gulp.task('build:style', () =>
     .on('error', (err) => {
       $.sass.logError.bind(this)(err);
     })
-    .pipe($.autoprefixer('last 2 version', '> 1%', 'ie 11'))
+    .pipe($.autoprefixer())
     .pipe($.cssmin())
     .pipe($.eol(path.src.lineending))
     .pipe($.insert.append(path.src.lineending))
@@ -32,12 +33,12 @@ gulp.task('dev:style', () =>
     .pipe($.sass_glob())
     .pipe($.sass({
       outputStyle: 'expanded',
-      indentWidth: 4,
+      indentWidth: 2,
     }))
     .on('error', () => {
       this.emit('end');
     })
-    .pipe($.autoprefixer('last 2 version', '> 1%', 'ie 11'))
+    .pipe($.autoprefixer())
     .pipe($.eol(path.src.lineending))
     .pipe($.insert.append(path.src.lineending))
     .pipe($.ext_replace('.min.css'))

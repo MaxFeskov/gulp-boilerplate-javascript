@@ -1,5 +1,6 @@
-const { $ } = global;
-const { taskPath: path } = global;
+const {
+  $, taskPath: path,
+} = global;
 
 const gulp = require('gulp');
 const del = require('del');
@@ -24,7 +25,7 @@ gulp.task('build:image', () =>
     .pipe($.remember('images'))
     .pipe($.compass_imagehelper({
       targetFile: '_imagehelper.scss',
-      template: './gulp-tasks/scss-imagehelper.mustache',
+      template: path.src.compassHelperTemplate,
       images_path: path.build.image,
       css_path: path.build.style,
     }))

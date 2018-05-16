@@ -1,5 +1,6 @@
-const { $ } = global;
-const { taskPath: path } = global;
+const {
+  $, taskPath: path,
+} = global;
 
 const gulp = require('gulp');
 const del = require('del');
