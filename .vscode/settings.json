@@ -18,5 +18,6 @@
   },
   "[scss]": {
     "editor.formatOnSave": true
-  }
+  },
+  "npm.enableScriptExplorer": true
 }
