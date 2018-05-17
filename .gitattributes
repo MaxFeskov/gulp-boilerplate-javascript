@@ -1,5 +1,7 @@
 * text eol=crlf
 
+src/* linguist-vendored
+
 ## SOURCE CODE
 *.bat      text
 *.coffee   text
