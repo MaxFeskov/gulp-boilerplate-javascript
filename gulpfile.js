@@ -1,12 +1,8 @@
 global.$ = require('gulp-load-plugins')({ renameFn(name) {
-  'use strict';
-
   return name.replace('gulp-', '').replace(/-/g, '_');
 } });
 
 global.errorHandler = (err) => {
-  'use strict';
-
   const { $ } = global;
 
   $.notify.onError({

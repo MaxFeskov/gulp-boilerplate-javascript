@@ -61,12 +61,11 @@ gulp.task('build:html', () =>
       insize: 2,
       force_indent: true,
       wrap: 0,
-      crlf: true,
+      crlf: false,
       textpreserve: true,
       spaceclose: true,
       newline: true,
     }))
-    .pipe($.eol(path.src.lineending))
     .pipe($.insert.append(path.src.lineending))
     .pipe($.htmllint())
     .pipe(gulp.dest(path.build.html)));

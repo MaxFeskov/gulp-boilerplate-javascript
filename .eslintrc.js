@@ -15,7 +15,6 @@ module.exports = {
   ],
   plugins: ['prettier', 'security', 'import'],
   rules: {
-    'linebreak-style': [2, 'windows'],
     'import/no-unresolved': 0,
     'import/extensions': 0,
     'no-param-reassign': [

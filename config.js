@@ -1,6 +1,6 @@
 const srcPath = {
   locale: 'ru',
-  lineending: '\r\n',
+  lineending: '\n',
   compassHelperTemplate: './gulp-tasks/scss-imagehelper.mustache',
   data: './src/data/',
   font: './src/fonts/**/*.*',
